@@ -1,0 +1,28 @@
+Fox Studio native capability inventory
+======================================
+
+The portable editor supports project authoring and inspection, native format
+previews, and archive/mod workflows through its sibling fox.exe. The native CLI
+includes project check/show/datasets/graph/resolve/new, a build graph runner,
+QAR inspection/extraction/rebuilding, pack/unpack, dictionary/hash tools, and
+mod setup/list/verify/install/uninstall/pack. Run fox.exe --help for syntax.
+
+Archive and install operations use a runtime profile learned locally from
+your own game executable and archives. Supply that profile explicitly using
+--runtime-profile, or the documented FOX_RUNTIME_PROFILE environment variable.
+No game-derived profile, encryption-key table, file-order dump, dictionary,
+asset or community mod is included in this distribution.
+
+A project graph describes stages; it does not supply every generator.
+The location stage library's seven native entries still need internal
+capabilities: nav.ground, nav.sky, package.terrain, package.fox2, package.packs,
+package.mgsv and package.verify. The legacy height, terrain-material, dressing,
+vegetation and water recipes require the private Python pipeline. They are
+outside this public native bundle. The editor can author their project data,
+but this bundle does not claim complete portable FLYK/location generation.
+
+Projects that select unavailable generation capabilities must receive a clear
+diagnostic; they cannot silently fall back to a developer checkout or Python.
+Bundled tools are identified by fox-tools.json and compiled bundle identity.
+No third-party application, Python runtime or developer repository is required
+for the native workflows listed above.

@@ -1,0 +1,26 @@
+[package]
+name = "foxinstall"
+description = "Mod installer for MGSV:TPP (.mgsv packages into master/0/00.dat, 01.dat): fast, exact, reversible"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+foxcore = { path = "../foxcore", default-features = false }
+zip = { version = "4", default-features = false, features = ["deflate-flate2"] }
+quick-xml = "0.42"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+md-5 = "0.11"
+sysinfo = { version = "0.39", default-features = false, features = ["system"] }
+rayon = "1"
+crc32fast = "1"
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+[features]
+# Private feature omitted from this release snapshot: default
+# Private feature omitted from this release snapshot: internal-game-data
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

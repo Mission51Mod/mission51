@@ -1,0 +1,11 @@
+**/target/
+**/.env
+**/.env.*
+**/*.log
+**/*.dmp
+**/*.tmp
+**/.DS_Store
+**/Thumbs.db
+**/runtime-profile*.json
+**/game/
+**/extracted/

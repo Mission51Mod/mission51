@@ -1,0 +1,26 @@
+[package]
+name = "foxproject"
+description = "Location projects: the stage library and the build-graph generator (a project spec -> a foxbuild graph)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+# Private Mission51 consistency proofs; never needed by the editor or public project APIs.
+# Private feature omitted from this release snapshot: internal-proofs
+
+[dependencies]
+blake3 = "1.8"
+foxpipe = { path = "../foxpipe" }
+foxbuild = { path = "../foxbuild" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+toml = "1"
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

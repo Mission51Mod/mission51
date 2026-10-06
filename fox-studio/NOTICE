@@ -1,0 +1,20 @@
+Fox Studio and the Fox Engine tooling
+Copyright the Fox Engine tooling authors
+Licensed under MIT OR Apache-2.0.
+
+This release contains our own code and ordinary crates.io dependencies.
+See THIRD_PARTY.txt or THIRD_PARTY.html for dependency copyrights and licence texts, and
+THIRD_PARTY.json for the exact dependency inventory of this build.
+
+MGSV, Metal Gear Solid and Fox Engine are trademarks of their respective
+owners. This independent tooling project is not affiliated with Konami.
+No Konami game assets, Collector's Edition data, community dictionaries,
+Infinite Heaven-derived scripts or source repository history are included.
+
+Format research credits: Atvaark (GzsTool, FoxTool and FtexTool),
+youarebritish / Joey35233 (FoxKit / FoxKit-3), and kapuragu
+(FoxEngineTemplates). These tools are references and are not bundled.
+
+The optional Windows installer is generated with Inno Setup by Jordan Russell
+and Martijn Laan. Its upstream copyright notices and web addresses are retained.
+The installer component's complete licence is in INNO-LICENSE.txt.

@@ -1,0 +1,42 @@
+[package]
+name = "foxcli"
+description = "fox: command-line tool for Fox Engine (MGSV:TPP) archives and formats"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "fox"
+path = "src/main.rs"
+
+[dependencies]
+blake3 = "1.8"
+foxcore = { path = "../foxcore", default-features = false }
+md-5 = "0.11"
+serde_json = "1"
+foxinstall = { path = "../foxinstall", default-features = false }
+# Private, inactive dependency excluded from the release source snapshot.
+
+foxbuild = { path = "../foxbuild" }
+foxpipe = { path = "../foxpipe" }
+foxproject = { path = "../foxproject" }
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+# Private, inactive dependency excluded from the release source snapshot.
+
+[features]
+# Keep the current mission pipeline available to internal builds. Public editor
+# packages use --no-default-features until these ports satisfy the release rules.
+# Private feature omitted from this release snapshot: default
+# Private feature omitted from this release snapshot: internal-pipeline
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

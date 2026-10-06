@@ -1,0 +1,21 @@
+# cargo-about configuration (docs/release/PLAN.md 3.3): the dependency licence notices shipped with the installer.
+#   cd tools/rust && cargo about generate about/notices.hbs -o ../../work/release/THIRD_PARTY_DEPENDENCIES.html
+# The accepted list mirrors deny.toml. Our own crates are MIT OR Apache-2.0; vendored / ported third-party code in
+# the transitional crates is listed by hand in THIRD_PARTY.md (repository root) until Phase 2 removes it.
+accepted = [
+    "MIT",
+    "MIT-0",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Zlib",
+    "CC0-1.0",
+    "BSL-1.0",
+    "Unicode-3.0",
+    "OFL-1.1",
+    "Ubuntu-font-1.0",
+]
+ignore-build-dependencies = false
+ignore-dev-dependencies = true

@@ -1,0 +1,27 @@
+Fox Engine tools
+
+Usage: fox <command> [arguments]
+
+  setup --game GAME --out PROFILE              Learn archive metadata locally
+  project check|show|datasets|graph|resolve|new   Location project files
+  build --config GRAPH --root FOLDER            Build a project's stage graph
+  build --project SPEC --bundled-tools MANIFEST Build a native project with bundled tools
+  qar info|list|verify|extract|diff|rebuild       Read or rebuild QAR archives
+  unpack FILE FOLDER [--dict FILE]              Extract an archive and its definition
+  pack DEFINITION.json FILE                    Build an archive from a definition
+  dict build --out FILE ARCHIVE...              Generate names from your own files
+  hash path PATH...                            Calculate game path hashes
+  hash file PATH                               Print a file's BLAKE3 digest
+  mod setup|list|verify --game FOLDER            Inspect or prepare mod state
+  mod install PACKAGE --game FOLDER            Install a mod package
+  mod uninstall NAME --game FOLDER              Remove an installed mod
+  mod pack STAGING FOLDER.mgsv                  Create a mod package
+  roundtrip FORMAT FOLDER                       Check archive or codec round trips
+  xml-roundtrip FILE                           Check XML round-trip fidelity
+  sb-check FILE                                Inspect SnakeBite metadata
+  --version                                    Print the tool version
+  --build-info                                 Print JSON version and build identity
+  --help                                       Show this help
+
+Inputs come from your own game installation. No game data is bundled.
+Archive commands use --runtime-profile PROFILE (or FOX_RUNTIME_PROFILE).

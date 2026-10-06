@@ -1,0 +1,15 @@
+[package]
+name = "foxpipe"
+description = "Stage runtime shared by every pipeline port: repo/location paths, logging, merge sets, etiquette"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+foxcore = { path = "../foxcore", default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+toml = "1"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

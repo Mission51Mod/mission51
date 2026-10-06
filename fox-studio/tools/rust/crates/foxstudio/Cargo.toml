@@ -1,0 +1,42 @@
+[package]
+name = "foxstudio"
+description = "Fox Studio: desktop GUI for the Fox Engine tools (projects, setup, build graph, logs, previews, mods)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "fox-studio"
+path = "src/main.rs"
+
+[dependencies]
+foxbuild = { path = "../foxbuild" }
+foxinstall = { path = "../foxinstall", default-features = false }
+foxpipe = { path = "../foxpipe" }
+foxcore = { path = "../foxcore", default-features = false }
+foxproject = { path = "../foxproject" }
+toml = "1"
+toml_edit = "0.25"
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+eframe = { version = "0.36", default-features = false, features = ["accesskit", "default_fonts", "wgpu"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = { version = "0.39", default-features = false, features = ["system"] }
+rfd = { version = "0.17", default-features = false }
+egui_extras = { version = "0.36", default-features = false }
+rayon = "1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_System_Registry", "Win32_Storage_FileSystem"] }
+
+[dev-dependencies]
+egui_kittest = { version = "0.36", features = ["eframe", "wgpu"] }
+[target.'cfg(target_os = "linux")'.dependencies]
+rfd = { version = "0.17", default-features = false, features = ["xdg-portal"] }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

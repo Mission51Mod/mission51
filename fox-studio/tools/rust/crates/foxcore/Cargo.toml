@@ -1,0 +1,24 @@
+[package]
+name = "foxcore"
+description = "Fox Engine (MGSV:TPP) formats and compute kernels: the pure-Rust core"
+version.workspace = true
+edition.workspace = true
+license = "MIT OR Apache-2.0"   # CityHash is our own clean-room implementation since 2026-10-05 (hash.rs)
+
+[dependencies]
+tempfile = "3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+md-5 = "0.11"
+quick-xml = "0.42"
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+
+[features]
+# Private feature omitted from this release snapshot: default
+# Private feature omitted from this release snapshot: proof-compat
+# Private feature omitted from this release snapshot: internal-game-data
+
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("internal-game-data", "internal-pipeline", "internal-proofs", "proof-compat", "transitional"))'] }

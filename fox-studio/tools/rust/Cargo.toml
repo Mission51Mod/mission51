@@ -1,0 +1,22 @@
+# Fox Engine tooling, Rust core (docs/release/RUST_DEV.md).
+#   foxcore  : pure-Rust library (format codecs, geometry, kernels). No Python, no I/O policy.
+#   foxpy    : PyO3 bindings (Python module `foxrs`, abi3 >= 3.10: one binary for system Python and Blender).
+#   foxbuild : map-build orchestrator (incremental, parallel, memory-budgeted).
+[workspace]
+resolver = "3"
+members = ["crates/foxbuild", "crates/foxcli", "crates/foxcore", "crates/foxinstall", "crates/foxpipe", "crates/foxproject", "crates/foxstudio"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"   # the user's decision 2026-10-05 (LICENSE-MIT, LICENSE-APACHE); crates with ported
+                                 # third-party code override it with a combined expression (THIRD_PARTY.md)
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4
+debug = 1               # symbols for profilers; does not change results
+
+[profile.dev]
+opt-level = 1
