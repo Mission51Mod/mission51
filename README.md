@@ -18,7 +18,7 @@ Battle Gear is being built as a playable machine with its own movement, weapons 
 
 Fox Studio is our Rust editor and toolset for Fox Engine modding. The [0.1.0 source](fox-studio/) includes project configuration, asset previews, archive operations and mod workflows. Animation editing is in development for a later version.
 
-Start with the [build instructions](fox-studio/README-SOURCE.txt) and [tool guide](fox-studio/CAPABILITIES.txt). This repository contains our tooling source; you will need your own game files.
+Start with the [getting-started guide](docs/GETTING_STARTED.md), [build instructions](fox-studio/README-SOURCE.txt) and [tool capabilities](fox-studio/CAPABILITIES.txt). This repository contains our tooling source; you will need your own game files.
 
 ## Following development
 
